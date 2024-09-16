@@ -1,0 +1,178 @@
+#Problem 1: Lists, Sets and Coersion
+#1A create list of integers no fewer than 10 items from 0 to 9
+int_list = [0,1,2,3,4,5,6,7,8,9]
+one_a=int_list
+print(one_a)
+
+#1B add 3 to the 5th indexed element 
+int_list[5] = int_list[5]+3
+one_b = int_list
+print(one_b)
+
+#1C Coerce all elements in the list to floats using list comprehension
+float_list = [ ]
+for item in int_list:
+    float_list.append(float(item))
+one_c = float_list
+print(one_c)
+
+#1D Coerce the list to a set
+set_list = set(float_list)
+one_d = set_list
+print(one_d)
+
+#1E Using a method, append int 10 to the set
+set_list.add(10)
+one_e = set_list
+print(one_e)
+
+#1F Using a method, pop an item from the set
+set_list.pop()
+one_f = set_list
+print(one_f)
+
+#1G Using a length counting function, count the number of items in the set
+length_set_list=len(set_list)
+one_g = length_set_list
+print(one_g)
+
+#1H Check if the number of items in the set is the same as the number of items in the list
+if len(int_list) == len(set_list):
+    print('Yes, the list and set have an equal number of items')
+else : print('No, the list and set do not have an equal number of items')
+
+#1I Coerce the set to a list and use the "+" operator combine the list to the list from 1.a
+list_set = list(set_list)
+print(list_set)
+
+int_list[5]=5 #Return int_list to original values from 1A
+add_list = list_set + int_list
+one_i = add_list
+print(one_i)
+
+#1J Coerce 1.i to a set
+set_list_added=set(add_list)
+one_j = set_list_added
+print(one_j)
+
+#1K Count the number of elements in the 1.j
+length_set_list_added = len(set_list_added)
+one_k = length_set_list_added
+print(one_k)
+
+#____________________________________________________________________
+
+#2A - Combine sample dictionaries into a nested dictionary named two_a
+two_a = {
+    'two_patient_dictionary_kinoko' : {
+        "name" : "Kinoko",
+        "year" : 2021
+    },
+    'two_patient_dictionary_dango' : {
+        "name" : "Dango",
+        "year" : 2019
+    },
+    'two_patient_dictionary_mochi' : {
+        "name" : "Mochi",
+        "year" : 2020
+    }
+}
+print(two_a)
+
+#2B - Using keys, retrieve the Dango's name from 2A
+two_b = (two_a['two_patient_dictionary_dango']["name"])
+print(two_b)
+
+#2C - Using keys, update the value of Mochi's year to 2018
+two_a['two_patient_dictionary_mochi']["year"]=2018
+print(two_a)
+
+#2D - Manually create a dictionary that has a single level and contains each patient as the key and the year as the value.
+two_d = {"Kinoko":2021, "Dango": 2019, "Mochi": 2019}
+print(two_d)
+
+#2E - Coerce the keys of 2.d into a list
+two_e = list(two_d.keys())
+print(two_e)
+
+#2F - Coerce the values of 2.d into a list
+two_f = list(two_d.values())
+print(two_f)
+
+#2G - Use the zip function to combine 2E and 2F into a dictionary again
+two_g = dict(zip(two_e, two_f))
+print(two_g)
+
+#____________________________________________________________________
+
+three_setA = {1,2,3,4,5}
+three_setB = {2,3,4,5,6}
+three_setC = {3,5,7,9}
+three_setD = {2,4,6,8}
+three_setE = {1,2,3,4}
+
+#3A - Is set E a subset of set A - True
+three_a = three_setE.issubset(three_setA)
+print(three_a)
+
+#3B - Is set E a strict subset of set A - True 
+three_b = three_setA.issuperset(three_setE)
+print(three_b)
+
+#3C - Create a set that is the intersection of set A and set B
+three_c = three_setA.intersection(three_setB)
+print(three_c)
+
+#3D - Create a set that is the union of sets C, D and E
+three_d = three_setC | three_setD | three_setE
+print(three_d)
+
+#3E - add 9 to the set - 9 is already a part of the set therefore cannot be added
+three_e = three_d.add(9)
+
+#3F - Using == compare this set to the list in one_a (int_list) - False
+list(three_d) == int_list
+
+#3G - Explain why they are not the same. What would you need to change if you wanted this to be True?
+print("Not the same because set is missing 0 element, so this must be added to the set to make the comparison true")
+three_d.add(0)
+three_g = list(three_d)
+three_g == int_list
+
+#____________________________________________________________________
+
+#4A - Create a variable of type int with the value of 8
+four_a = 8
+
+#4B - Create an empty list
+four_b = list()
+
+#4C - Using type(), add the type of 4.a to this list
+four_b.append(type(four_a))
+four_c = four_b
+print(four_c)
+
+#4D - Add 0.39 to 4C
+four_c.append(0.39)
+four_d = four_c
+print(four_d)
+
+#4E - append the type of 0.39 to the list
+four_etype = type(four_d[1])
+four_d.append(four_etype)
+four_e = four_d
+print(four_e)
+
+#4F - exponentiate to the -10, ie: 4.d^-10,round it to no decimal places, and append to list.
+four_f_math = 0.39**(-10)
+four_f_round = int(four_f_math)
+four_e.append(four_f_round)
+four_f = four_e
+print(four_f)
+
+#4G - append the type to the list
+four_f.append(type(four_f_round))
+four_g = four_f
+print(four_g)
+
+#____________________________________________________________________
